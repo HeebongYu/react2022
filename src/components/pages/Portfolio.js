@@ -59,12 +59,11 @@ class Portfolio extends React.Component {
             });
             gsap.to(".port__inner", {
                 duration: 3,
-                button: 0,
                 opacity: 1,
                 delay : 2,
                 ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)"
             });
-        }, 0)
+        })
     }
 
     getPorts = async () => {
@@ -85,14 +84,13 @@ class Portfolio extends React.Component {
         setTimeout(() => {
             console.log("첫번째 시작")
             document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").style.background = "var(--dark_bg)";
             this.getPorts();
         }, 2000)
     }
 
     render(){
         const {isLoading, ports} = this.state;
-
-        // console.log(ports)
 
         return (
             <>

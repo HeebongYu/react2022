@@ -78,6 +78,7 @@ class Main extends React.Component {
         setTimeout(() => {
             console.log("첫번째 시작")
             document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").style.background = "var(--dark_bg)";
             this.getMain();
         }, 2000)
     }
