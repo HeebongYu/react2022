@@ -1,0 +1,91 @@
+//about__cont
+.about__cont {
+    padding-bottom: 20vh;
+    width: 100%;
+}
+.about__inner {
+    font-family: var(--kor_font);
+    color: var(--white);
+    .about__item1 {
+        .text {
+            margin-top: 4rem;
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                margin-top: 1.6rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                width: 72%;
+            }
+        }
+    }
+    .about__item2 {
+        margin-top: 15rem;
+        display: flex;
+        justify-content: space-between;
+        .img {
+            flex: 0 0 66%;
+        }
+        .text {
+            flex: 0 0 32%;
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                margin-top: 1.6rem;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+    .about__item3 {
+        margin-top: 15rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        .text {
+            flex: 0 0 35%;
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                margin-top: 1.6rem;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+        .img {
+            flex: 0 0 63%;
+        }
+    }
+}
+
+// 라이트 버전
+.light.about__cont {
+    background-color: var(--light_bg);
+    .about__inner {
+        color: var(--black);
+    }
+}
+
+// 미디어 커리
+@media (max-width: 700px) {
+    .about__inner{
+        .about__item1 {
+            .text {
+                p {
+                    width: auto;
+                }
+            }
+        }
+        .about__item2,
+        .about__item3 {
+            margin-top: 10rem;
+            flex-direction: column;
+            .text {
+                margin-top: 2rem;
+            }
+        }
+    }
+}

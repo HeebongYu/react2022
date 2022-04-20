@@ -1,0 +1,40 @@
+//refer__cont
+.refer__cont {
+    min-height: 100vh;
+}
+.refer__inner {
+    h2 {
+        color: var(--white);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    table {
+        border-top: 1px solid var(--dark_bd);
+        border-bottom: 2px solid var(--dark_bd);
+        color: var(--white);
+
+        td {
+            border-top: 1px solid var(--dark_bd);
+            padding: 1.4rem 0;
+            font-family: var(--subKor_font);
+            font-weight: 300;
+        }
+    }
+}
+
+// 라이트 버전
+.light.refer__cont {
+    background-color: var(--light_bg);
+    .refer__inner {
+        h2 {
+            color: var(--black);
+        }
+        table {
+            border-color: var(--light_bd);
+            color: var(--black);
+            td {
+                border-color: var(--light_bd);
+            }
+        }
+    }
+}
