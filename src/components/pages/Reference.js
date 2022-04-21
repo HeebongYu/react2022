@@ -9,27 +9,13 @@ import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 import axios from "axios";
 
-// function Reference(){
-//     return (
-//         <>
-//             <Header color={"light"} />
-//             <Contents>
-//                 <Title title={["reference", "book"]} color="light" />
-//                 <ReferCont color={"light"} />
-//                 <Contact />
-//             </Contents>
-//             <Footer color={"light"} />
-//         </>
-//     );
-// };
-
 class Reference extends React.Component{
     state = {
         isLoading: true,
         refers: [],
     }
 
-    referAnimation = () => {
+    mainAnimation = () => {
         setTimeout(() => {
             gsap.to("#header", {
                 duration: 0.4,
@@ -66,25 +52,21 @@ class Reference extends React.Component{
         })
     }
 
-    getRefer = async () => {
+    getRefers = async () => {
         const {
             data:{
                 data:{htmlRefer}
             }
         } = await axios.get("https://webstoryboy.github.io/react2022/src/assets/json/refer.json");
-
         this.setState({refers:htmlRefer, isLoading: false});
-
-        console.log("두번째 시작")
-        this.referAnimation();
+        this.mainAnimation();
     }
 
     componentDidMount(){
         setTimeout(() => {
-            console.log("첫번째 시작")
             document.getElementById("loading").classList.remove("loading__active");
             document.querySelector("body").style.background = "var(--light_bg)";
-            this.getRefer();
+            this.getRefers();
         }, 2000)
     }
 
@@ -100,7 +82,37 @@ class Reference extends React.Component{
                         <Header color="light" />
                         <Contents>
                             <Title title={["reference", "book"]} color="light" />
-                            <ReferCont refer={refers} color="light" />
+                            <section className="refer__cont light">
+                                <div className="container">
+                                    <div className="refer__inner">
+                                        <h2>CSS</h2>
+                                        <ul className="refer__list light">
+                                            {refers.map((refer) => (
+                                                <ReferCont
+                                                    key={refer.id}
+                                                    id={refer.id}
+                                                    title={refer.title}
+                                                    desc={refer.desc}
+                                                    desc2={refer.desc2}
+                                                    element={refer.element}
+                                                    tag={refer.tag}
+                                                    version={refer.version}
+                                                    view={refer.view}
+                                                    use={refer.use}
+                                                    image={refer.image}
+                                                    link={refer.link}
+                                                    Definition={refer.Definition}
+                                                    Accessibility={refer.Accessibility}
+                                                    CrossBroswing={refer.CrossBroswing}
+                                                    Related={refer.Related}
+                                                    mdn={refer.mdn}
+                                                    w3c={refer.w3c}
+                                                />
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
                             <Contact />
                         </Contents>
                         <Footer color="light" />

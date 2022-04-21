@@ -1,5 +1,6 @@
 //refer__cont
 .refer__cont {
+    background-color: var(--black);
     min-height: 100vh;
 }
 .refer__inner {
@@ -8,17 +9,57 @@
         font-size: 2rem;
         margin-bottom: 1rem;
     }
-    table {
-        border-top: 1px solid var(--dark_bd);
-        border-bottom: 2px solid var(--dark_bd);
+}
+.refer__list {
+    border-top: 2px solid var(--light_bg);
+    border-bottom: 1px solid var(--light_bg);
+    a {
+        display: block;
         color: var(--white);
-
-        td {
-            border-top: 1px solid var(--dark_bd);
-            padding: 1.4rem 0;
-            font-family: var(--subKor_font);
-            font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--light_bg);
+        padding: 1.3rem 0;
+        transition: all 0.3s;
+        font-family: var(--subKor_font);
+        &:hover {
+            background: var(--light_bg);
+            color: var(--black);
         }
+        span {
+            display: inline-block;
+        }
+        span:nth-child(1) {
+            width: 6%;
+            text-align: center;
+        }
+        span:nth-child(2) {
+            width: 20%;
+        }
+        span:nth-child(3) {
+            width: 64%;
+        }
+        span:nth-child(4) {
+            width: 10%;
+            text-align: center;
+        }
+    }
+}
+
+.refer__table {
+    padding-top: 300px;
+    color: var(--white);
+    font-family: var(--subKor_font);
+
+    h3 {
+        color: var(--white);
+        font-size: 3rem;
+    }
+    p {
+        background-color: var(--light_bd);
+        color: var(--black);
+        padding: 1.3em;
     }
 }
 
@@ -29,11 +70,26 @@
         h2 {
             color: var(--black);
         }
-        table {
+        .refer__list {
             border-color: var(--light_bd);
-            color: var(--black);
-            td {
+            a {
+                color: var(--black);
                 border-color: var(--light_bd);
+                &:hover {
+                    background: var(--dark_bg);
+                    color: var(--white);
+                }
+            }
+        }
+        .refer__table {
+            color: var(--black);
+            font-family: var(--subKor_font);
+            h3 {
+                color: var(--black);
+            }
+            p {
+                background-color: var(--dark_bd);
+                color: var(--white);
             }
         }
     }

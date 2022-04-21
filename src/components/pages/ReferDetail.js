@@ -5,7 +5,7 @@ import Footer from "../layout/Footer";
 import { gsap } from "gsap";
 
 class ReferDetail extends React.Component {
-    referAnimation = () => {
+    mainAnimation = () => {
         setTimeout(() => {
             gsap.to("#header", {
                 duration: 0.4,
@@ -25,30 +25,40 @@ class ReferDetail extends React.Component {
             });
         })
     }
-    
+
     componentDidMount(){
-        this.referAnimation()
-        document.querySelector("body").style.background = "var(--light_bg)";
+        const {location, history} = this.props;
+        if(location.state === undefined){
+            history.push("/reference");
+        }
+        this.mainAnimation();
     }
 
     render(){
-        return (
-            <>
-                <Header color="light" />
-                <Contents>
-                    <section>
-                        <div className='refer__cont light'>
-                            <div className='container'>
-                                <div className='refer__inner'>
+        const {location} = this.props;
 
+        if(location.state === undefined){
+            return <div>잘못된 페이지입니다.</div>
+        } else {
+            return (
+                <>
+                    <Header color="light" />
+                    <Contents>
+                        <section className="refer__cont light">
+                            <div className="container">
+                                <div className="refer__inner">
+                                    <div className='refer__table'>
+                                        <h3>{location.state.title}</h3>
+                                        <p>{location.state.desc}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </Contents>
-                <Footer color="light" />
-            </>
-        )
+                        </section>
+                    </Contents>
+                    <Footer color="light" />
+                </>
+            )
+        }
     }
 }
 
