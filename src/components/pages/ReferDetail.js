@@ -4,6 +4,12 @@ import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
 import { gsap } from "gsap";
 
+// function DefinitionInfo(Definition){
+//     return (
+//         <li>{Definition}</li>
+//     )
+// }
+
 class ReferDetail extends React.Component {
     mainAnimation = () => {
         setTimeout(() => {
@@ -44,7 +50,7 @@ class ReferDetail extends React.Component {
                 <>
                     <Header color="light" />
                     <Contents>
-                        <section className="refer__cont">
+                        <section className="refer__cont light">
                             <div className="container">
                                 <div className="refer__inner">
                                     <div className='refer__table'>
@@ -85,6 +91,32 @@ class ReferDetail extends React.Component {
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                        <div className='definition'>
+                                            <div className='title'>정의(Definition)</div>
+                                            <ul>
+                                                <li>{location.state.Definition[0]}</li>
+                                                <li>{location.state.Definition[1]}</li>
+                                                <li>{location.state.Definition[2]}</li>
+                                                <li>{location.state.Definition[3]}</li>
+                                                <li>{location.state.Definition[4]}</li>
+                                                <li>{location.state.Definition[5]}</li>
+                                                <li>{location.state.Definition[6]}</li>
+                                            </ul>
+                                        </div>
+                                        <div className='accessibility'>
+                                            <div className='title'>접근성(Accessibility)</div>
+                                            <ul>
+                                                <li>{location.state.Accessibility[0]}</li>
+                                                <li>{location.state.Accessibility[1]}</li>
+                                            </ul>
+                                        </div>
+                                        <div className='reference'>
+                                            <div className='title'>참고 사이트(Reference)</div>
+                                            <ul>
+                                                <li><a href={location.state.mdn} target="blank">mdn</a></li>
+                                                <li><a href={location.state.w3c} target="blank">w3c</a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
