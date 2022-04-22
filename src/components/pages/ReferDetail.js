@@ -44,12 +44,48 @@ class ReferDetail extends React.Component {
                 <>
                     <Header color="light" />
                     <Contents>
-                        <section className="refer__cont light">
+                        <section className="refer__cont">
                             <div className="container">
                                 <div className="refer__inner">
                                     <div className='refer__table'>
                                         <h3>{location.state.title}</h3>
                                         <p>{location.state.desc}</p>
+                                        <div>
+                                            <table className='table'>
+                                                <colgroup>
+                                                    <col style={{width: "20%"}}/>
+                                                    <col style={{width: "80%"}}/>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>특징</th>
+                                                        <th>설명</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>요소</th>
+                                                        <td>{location.state.element}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>닫는 태그</th>
+                                                        <td>{location.state.tag}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>버전</th>
+                                                        <td>{location.state.version}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>시각적 표현</th>
+                                                        <td>{location.state.view}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사용성</th>
+                                                        <td>{location.state.use}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -2,6 +2,7 @@
 .refer__cont {
     background-color: var(--black);
     min-height: 100vh;
+    height: 50000px; /* 임시 */
 }
 .refer__inner {
     h2 {
@@ -60,6 +61,18 @@
         background-color: var(--light_bd);
         color: var(--black);
         padding: 1.3em;
+    }
+    .table {
+        color: var(--white);
+        font-family: var(--subKor_font);
+        border: 1px solid var(--light_bg);
+        margin-top: 0.5em;
+        th,td {
+            font-weight: normal;
+            padding: 1em;
+            border-bottom: 1px solid var(--light_bg);
+            border-left: 1px solid var(--light_bg);
+        }
     }
 }
 
