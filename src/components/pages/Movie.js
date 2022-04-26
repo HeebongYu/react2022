@@ -12,15 +12,9 @@ import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 
 
-
+Movie();
 function Movie() {
   const [videos, setVideos] = useState([]);
-
-
-  const {location, history} = this.props;
-  if(location.state === undefined){
-      history.push("/movie");
-  }
 
   const mainAnimation = () => {
     setTimeout(() => {
