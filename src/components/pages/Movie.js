@@ -11,9 +11,14 @@ import MovieSearch from "../includes/MovieSearch";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 
-function Movie() {
 
+
+function Movie() {
   const [videos, setVideos] = useState([]);
+
+  if(videos === undefined){
+    Movie();
+  }
 
   const mainAnimation = () => {
     setTimeout(() => {
