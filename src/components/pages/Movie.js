@@ -17,7 +17,7 @@ function Movie() {
   const [videos, setVideos] = useState([]);
 
   if(videos === undefined){
-    Movie();
+    useEffect();
   }
 
   const mainAnimation = () => {
