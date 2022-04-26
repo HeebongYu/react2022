@@ -11,10 +11,12 @@ import MovieSearch from "../includes/MovieSearch";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 
-
-Movie();
 function Movie() {
   const [videos, setVideos] = useState([]);
+
+    if(videos === undefined){
+      this.useEffect();
+    }
 
   const mainAnimation = () => {
     setTimeout(() => {
@@ -76,6 +78,7 @@ function Movie() {
         .then(result => {
             setVideos(result.results);
             mainAnimation();
+            console.log(result)
           })
         .catch(error => console.log('error', error));
   }, []);
