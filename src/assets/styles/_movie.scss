@@ -1,11 +1,11 @@
-.youtube__cont {
+.movie__cont {
     padding-bottom: 20vh;
     width: 100%;
 }
-.youtube__inner {
+.movie__inner {
    opacity: 0;
 }
-.youtube__list {
+.movie__list {
     margin-bottom: 200px;
    ul {
        display: flex;
@@ -30,7 +30,7 @@
        
    }
 }
-.youtube__search {
+.movie__search {
     position: relative;
     h2 {
         color: var(--white);
@@ -72,26 +72,9 @@
 
 // 미디어 커리
 @media (max-width: 800px) {
-    .youtube__list {
+    .movie__list {
         ul {
             li {flex: 1 1 48%;}
-        }
-    }
-}
-
-// 라이트 버전
-.light.youtube__cont {
-    background-color: var(--light_bg);
-    .youtube__inner {
-        color: var(--black);
-        .youtube__list {
-            ul {
-                li {
-                    p {
-                        color: var(--black);
-                    }
-                }
-            }
         }
     }
 }
