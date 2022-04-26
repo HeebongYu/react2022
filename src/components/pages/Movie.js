@@ -4,19 +4,17 @@ import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
 import Title from "../layout/Title";
 import Contact from "../layout/Contact";
-
 import MovieList from "../includes/MovieList";
 import MovieSearch from "../includes/MovieSearch";
-
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 
 function Movie() {
   const [videos, setVideos] = useState([]);
 
-    if(videos === undefined){
-      this.useEffect();
-    }
+  if(videos === undefined){
+    this.useEffect();
+  }
 
   const mainAnimation = () => {
     setTimeout(() => {
@@ -55,7 +53,6 @@ function Movie() {
       });
     }, 2000)
   }
-
   const search = (query) => {
       console.log(query)
     var requestOptions = {

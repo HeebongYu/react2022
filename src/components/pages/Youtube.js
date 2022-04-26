@@ -9,11 +9,12 @@ import YoutubeSearch from "../includes/YoutubeSearch";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 
-// require("dotenv").config()
-
 function Youtube() {
-
   const [videos, setVideos] = useState([]);
+
+  if(videos === undefined){
+    this.useEffect();
+  }
 
   const mainAnimation = () => {
     setTimeout(() => {

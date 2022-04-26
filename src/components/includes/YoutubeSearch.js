@@ -17,7 +17,7 @@ function YoutubeSearch({ onSearch }) {
   };
 
   return (
-    <div className='youtube__search container'>
+    <div className='movie__search container'>
       <h2>검색하기</h2>
       <input 
         ref={inputRef}
