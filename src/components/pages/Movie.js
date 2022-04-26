@@ -16,8 +16,10 @@ import { gsap } from "gsap";
 function Movie() {
   const [videos, setVideos] = useState([]);
 
-  if(videos === undefined){
-    useEffect();
+
+  const {location, history} = this.props;
+  if(location.state === undefined){
+      history.push("/movie");
   }
 
   const mainAnimation = () => {
