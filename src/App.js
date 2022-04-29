@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./components/pages/Main";
 import About from "./components/pages/About";
 import Reference from "./components/pages/Reference";
@@ -9,7 +9,6 @@ import Movie from "./components/pages/Movie";
 import Contact from "./components/pages/Contact";
 import Portfolio from "./components/pages/Portfolio";
 import ReferDetail from "./components/pages/ReferDetail";
-
 
 function App() {
   return (
