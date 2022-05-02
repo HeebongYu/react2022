@@ -12,7 +12,7 @@ import { gsap } from "gsap";
 function Youtube() {
   const [videos, setVideos] = useState([]);
 
-  if(videos === undefined){
+  if (videos === undefined) {
     this.useEffect();
   }
 
@@ -22,60 +22,66 @@ function Youtube() {
       gsap.to("#header", {
         duration: 0.4,
         top: 0,
-        ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)"
+        ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)",
       });
       gsap.to("#footer", {
-          duration: 0.4,
-          bottom: 0,
-          ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)"
+        duration: 0.4,
+        bottom: 0,
+        ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)",
       });
       gsap.to(".cont__title strong", {
-          duration: 0.5,
-          opacity: 1,
-          x: 0,
-          y: 0,
-          delay : 1,
-          ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)"
+        duration: 0.5,
+        opacity: 1,
+        x: 0,
+        y: 0,
+        delay: 1,
+        ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)",
       });
       gsap.to(".cont__title em", {
-          duration: 0.5,
-          opacity: 1,
-          x: 0,
-          y: 0,
-          delay : 1.2,
-          ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)"
+        duration: 0.5,
+        opacity: 1,
+        x: 0,
+        y: 0,
+        delay: 1.2,
+        ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)",
       });
       gsap.to(".youtube__inner", {
-          duration: 3,
-          opacity: 1,
-          delay : 2,
-          ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)"
+        duration: 3,
+        opacity: 1,
+        delay: 2,
+        ease: "cubic-bezier(1.000, -0.600, 1.000, -0.600)",
       });
-    }, 2000)
-  }
+    }, 2000);
+  };
 
   const search = (query) => {
     var requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
+      method: "GET",
+      redirect: "follow",
     };
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=28&q=${query}&key=${process.env.REACT_APP_API}`, requestOptions)
-      .then(response => response.json())
-      .then(result => setVideos(result.items))
-      .catch(error => console.log('error', error));
-  }
+    fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=28&q=${query}&key=${process.env.REACT_APP_API}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setVideos(result.items))
+      .catch((error) => console.log("error", error));
+  };
   useEffect(() => {
     var requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
+      method: "GET",
+      redirect: "follow",
     };
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=28&key=${process.env.REACT_APP_API}`, requestOptions)
-      .then(response => response.json())
-      .then(result => {
+    fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=28&key=${process.env.REACT_APP_API}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
         setVideos(result.items);
         mainAnimation();
       })
-      .catch(error => console.log('error', error));
+      .catch((error) => console.log("error", error));
   }, []);
 
   return (
@@ -86,17 +92,17 @@ function Youtube() {
         <Title title={["youtube", "Reference"]} />
         <section className={"youtube__cont"}>
           <div className="container">
-              <div className="youtube__inner">
-                <YoutubeSearch onSearch={search} />
-                <YoutubeList videos={videos} />
-              </div>
+            <div className="youtube__inner">
+              <YoutubeSearch onSearch={search} />
+              <YoutubeList videos={videos} />
+            </div>
           </div>
         </section>
         <Contact />
       </Contents>
       <Footer />
     </>
-  )
+  );
 }
 
-export default Youtube
+export default Youtube;
