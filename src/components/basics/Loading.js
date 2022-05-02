@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react";
+import ScrollToTop from "./ScrollToTop";
 
 function Loading(props) {
   return (
-    <div id='loading' className={`loading__active ${props.color}`} >
+    <>
+      <ScrollToTop />
+      <div id="loading" className={`loading__active ${props.color}`}>
         <div className="loading__text">
           <span>L</span>
           <span>O</span>
@@ -12,8 +15,9 @@ function Loading(props) {
           <span>N</span>
           <span>G</span>
         </div>
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
-export default Loading
+export default Loading;
